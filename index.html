@@ -13,6 +13,12 @@
 
         <nav>
             <div class="topnav__menu">
+                <!-- Interactive elements should be created as HTML button element, so that keyboards and screenreaders can press it. -->
+                <button class="topnav__close">
+                    <!-- Alt attribute for images in those elements should be left blank, so that screenreaders will ignore it. -->
+                    <img src="./icons/close.svg" alt="" width="28" height="27">
+                </button>
+
                 <ul class="topnav__links">
                     <li class="topnav__item">
                         <a href="" class="topnav__link">About</a>

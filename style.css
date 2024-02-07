@@ -10,6 +10,11 @@ body {
     color: #eee;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
 .topnav {
     background-color: #333;
     padding: 1.5rem;
@@ -23,6 +28,14 @@ body {
             position: fixed;
             inset: 0;
             padding: 3rem;;
+            translate: 100vw 0;
+            transition: translate 500ms ease-in-out;
+        }
+
+        & .topnav__close {
+            display: block;
+            margin-inline-start: auto;
+            margin-block-end: 5rem;
         }
     }
 

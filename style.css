@@ -13,6 +13,7 @@ body {
 button {
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .topnav {
@@ -21,6 +22,12 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    & .topnav__open {
+        @media (width >= 40em) {
+            display: none;
+        }
+    }
 
     & .topnav__menu {
         @media (width < 40em) {
@@ -36,6 +43,10 @@ button {
             display: block;
             margin-inline-start: auto;
             margin-block-end: 5rem;
+
+            @media (width >= 40em) {
+                display: none;
+            }
         }
     }
 

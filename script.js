@@ -9,6 +9,9 @@ function setupTopNav(e) {
     if (e.matches) {
         console.log('is mobile');
         topNavMenu.setAttribute('inert', '');
+
+        // to prevent menu from appearing on load or changing of the screen sizes
+        topNavMenu.style.transition = 'none';
     } else {
         console.log('is desktop');
         topNavMenu.removeAttribute('inert');
@@ -19,11 +22,19 @@ console.log(media);
 function openMobileMenu() {
     btnOpen.setAttribute('aria-expanded', 'true');
     topNavMenu.removeAttribute('inert');
+
+    // to prevent menu from appearing on load or changing screen sizes
+    topNavMenu.removeAttribute('style');
 }
 
 function closeMobileMenu() {
     btnOpen.setAttribute('aria-expanded', 'false');
     topNavMenu.setAttribute('inert', '');
+
+    // to prevent menu from appearing on load or changing screen sizes
+    setTimeout(() => {
+        topNavMenu.style.transition = 'none';
+    }, 500);
 }
 
 setupTopNav(media);

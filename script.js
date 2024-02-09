@@ -4,6 +4,7 @@ const btnClose = document.querySelector('[data-btn-close]');
 // checking the width of the device on which the website was first loaded on
 const media = window.matchMedia('(width < 40em)');
 const topNavMenu = document.querySelector('.topnav__menu');
+const mainElem = document.querySelector('main');
 
 function setupTopNav(e) {
     if (e.matches) {
@@ -25,6 +26,7 @@ function openMobileMenu() {
 
     // to prevent menu from appearing on load or changing screen sizes
     topNavMenu.removeAttribute('style');
+    mainElem.setAttribute('inert', '');
 }
 
 function closeMobileMenu() {
@@ -35,6 +37,8 @@ function closeMobileMenu() {
     setTimeout(() => {
         topNavMenu.style.transition = 'none';
     }, 500);
+
+    mainElem.removeAttribute('inert');
 }
 
 setupTopNav(media);

@@ -10,6 +10,11 @@ body {
     color: #eee;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 button {
     background: none;
     border: none;
@@ -31,6 +36,10 @@ button {
 
     & .topnav__open[aria-expanded="true"] + .topnav__menu {
         translate: 0;
+
+        @media (prefers-reduced-motion) {
+            opacity: 1;
+        }
     }
 
     & .topnav__menu {
@@ -38,9 +47,16 @@ button {
             background-color: blue;
             position: fixed;
             inset: 0;
-            padding: 2rem 1.5rem;;
-            translate: 100vw 0;
+            padding: 2rem 1.5rem;
+            translate: 100vw 0; 
             transition: translate 500ms ease-in-out;
+        }
+
+        /* removing translate with opacity for users that prefer reduced motion */
+        @media (width < 40em) and (prefers-reduced-motion) {
+            translate: 0;
+            opacity: 0;
+            transition: opacity 500ms ease-in-out;
         }
 
         & .topnav__close {

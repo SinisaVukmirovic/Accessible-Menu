@@ -12,9 +12,19 @@ ___
 ##### aria-label="Close" instead of aria-labelby to only label the button itself
 ###### *aria-label can be used in cases where text that could label the element is not visible. If there is visible text that labels an element, use aria-labelledby instead. The purpose of aria-label is the same as aria-labelledby . Both provide an accessible name for an element.*
 
-### to check the width of the device on which the website was first loaded on, we use "window.matchMedia". To check if its on mobile screen:
+### to check the width of the device on which the website was first loaded on, we can use "window.matchMedia" method.
 ```
     const media = window.matchMedia('(width < 40em)');
+
+    function setupTopNav(e) {
+    if (e.matches) {
+        console.log('is mobile');
+    } else {
+        console.log('is desktop');
+    }
+
+    setupTopNav(media);
+}
 ```
 ### inert attribute is used to hide element from the accessibility tools.
 ##### *The inert global attribute is a Boolean attribute indicating that the browser will ignore the element.* 

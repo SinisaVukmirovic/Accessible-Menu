@@ -16,6 +16,8 @@ function setupTopNav(e) {
     } else {
         console.log('is desktop');
         topNavMenu.removeAttribute('inert');
+
+        closeMobileMenu();
     }
 }
 console.log(media);
@@ -27,6 +29,8 @@ function openMobileMenu() {
     // to prevent menu from appearing on load or changing screen sizes
     topNavMenu.removeAttribute('style');
     mainElem.setAttribute('inert', '');
+
+    btnClose.focus();
 }
 
 function closeMobileMenu() {
@@ -39,6 +43,8 @@ function closeMobileMenu() {
     }, 500);
 
     mainElem.removeAttribute('inert');
+
+    btnOpen.focus();
 }
 
 setupTopNav(media);

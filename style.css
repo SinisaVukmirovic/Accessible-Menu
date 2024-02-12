@@ -23,18 +23,18 @@ button {
 
 .topnav {
     background-color: #333;
-    padding: 1.5rem;
+    padding: 1.5rem 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     & .topnav__open {
-        @media (width >= 40em) {
+        @media (width >=40em) {
             display: none;
         }
     }
 
-    & .topnav__open[aria-expanded="true"] + .topnav__menu {
+    & .topnav__open[aria-expanded="true"]+.topnav__menu {
         translate: 0;
 
         @media (prefers-reduced-motion) {
@@ -47,8 +47,9 @@ button {
             background-color: blue;
             position: fixed;
             inset: 0;
-            padding: 2rem 1.5rem;
-            translate: 100vw 0; 
+            /* padding: 2rem 1.5rem; */
+            padding: 2rem 10%;
+            translate: 100vw 0;
             transition: translate 500ms ease-in-out;
         }
 
@@ -62,9 +63,8 @@ button {
         & .topnav__close {
             display: block;
             margin-inline-start: auto;
-            margin-block-end: 5rem;
 
-            @media (width >= 40em) {
+            @media (width >=40em) {
                 display: none;
             }
         }

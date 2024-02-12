@@ -15,9 +15,10 @@ function setupTopNav(e) {
         topNavMenu.style.transition = 'none';
     } else {
         console.log('is desktop');
-        topNavMenu.removeAttribute('inert');
-
+        
         closeMobileMenu();
+        // the line below must be after closeMobileMenu functionality to not set inert on topnav__menu elem if site is loaded on desktop
+        topNavMenu.removeAttribute('inert');
     }
 }
 console.log(media);
@@ -35,6 +36,7 @@ function openMobileMenu() {
 
 function closeMobileMenu() {
     btnOpen.setAttribute('aria-expanded', 'false');
+
     topNavMenu.setAttribute('inert', '');
 
     // to prevent menu from appearing on load or changing screen sizes
@@ -52,5 +54,5 @@ setupTopNav(media);
 btnOpen.addEventListener('click', openMobileMenu);
 btnClose.addEventListener('click', closeMobileMenu);
 
-// handling the inert attribu in cases where the uses changes the viewports
+// handling the inert attribut in cases where the user changes the viewports
 media.addEventListener('change', e => setupTopNav(e));

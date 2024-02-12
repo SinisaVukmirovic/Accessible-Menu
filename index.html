@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="topnav">
-        <h1><a href="#">Accessible Menu</a></h1>
+        <a href="#" class="logo">Accessible <span class="accent">Menu</span></a>
 
         <nav>
             <!-- in order to give screenreaders context for these 2 parts of the dialog we need to give them a label -->
@@ -41,8 +41,46 @@
         </nav>
     </header>
     <main>
-        <h2>Rest of the website</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima numquam nostrum ut perspiciatis nihil fugit odio eaque at necessitatibus aut quibusdam aliquid exercitationem eveniet doloribus, fuga fugiat natus sapiente beatae ipsa! Dignissimos sunt saepe consectetur eaque, neque inventore? Impedit odit dolores inventore quisquam perspiciatis molestias rerum exercitationem vitae accusantium, culpa dignissimos, id reiciendis soluta, ipsam alias veritatis sed ut iste autem. Nostrum culpa consequatur, aspernatur aliquid molestiae pariatur minus deleniti expedita error earum inventore, nesciunt quae alias eligendi tempora aut nihil ipsa similique. Dolores iure vero, in eos molestiae perspiciatis deleniti soluta accusantium, architecto magnam autem. Numquam magni adipisci, labore officiis consequuntur, tempora quibusdam nihil, a quis saepe illo placeat dignissimos cupiditate fuga? Ratione amet eum quo. Hic fugiat voluptate nostrum, provident recusandae aspernatur. Quia officia ducimus eos a illum voluptatem, voluptates eligendi natus dolorem labore cum rem earum nesciunt tempore laudantium ea veniam nulla consequuntur voluptatibus! Nam, sunt hic autem vitae incidunt ratione dolorum suscipit aliquid quasi, sit iure ut? Quam nulla, vitae veniam molestias impedit consequuntur sequi, ducimus dolores qui officia minima nobis ipsam architecto corrupti ad ratione dolor quibusdam hic sunt, provident necessitatibus deserunt. Soluta quasi consequatur cupiditate quaerat, exercitationem minus mollitia quibusdam sit saepe. Consectetur, assumenda?</p>
+        <h1>Accessible Menu</h1>
+
+        <section>
+            <article>
+                <p>Interactive elements should be created as HTML button element, so that keyboards and screenreaders can press it.</p>
+                <p>Alt attribute for icon images in those elements should be left blank, so that screenreaders will ignore it.</p>
+            </article>
+            <article>
+                <p>role="dialog" indicated that it contains additional content on the website that you can access by interacting with a control. (hamburger menus, accordions, pop-up modals)</p>
+                <p>Other part of the "dialog" is the element that controls whather the dialog's content is expanded or hidden, aria-expanded="false/true".</p>
+                <p>In order to give screenreaders context for these 2 parts of the dialog we need to give them a label, with aria-labeledby attribute and value of the ID of labeling element, to the, both, menu and open btn.</p>
+            </article>
+            <article>
+                <p>to check the width of the device on which the website was first loaded on, we can use "window.matchMedia" method.</p>
+                <code><pre>
+const media = window.matchMedia('(width &lt; 40em)');
+
+function setupTopNav(e) {
+    if (e.matches) {
+        console.log('is mobile');
+    } else {
+        console.log('is desktop');
+    }
+
+    setupTopNav(media);
+}
+                </pre></code>
+            </article>
+            <article>
+                <p>"inert" attribute is used to hide element from the accessibility tools.</p>
+                <p>The inert global attribute is a Boolean attribute indicating that the browser will ignore the element.</p>
+                <ul>
+                    <li>Prevents the click event from being fired when the user clicks on the element.</li>
+                    <li>Prevents the focus event from being raised by preventing the element from gaining focus.</li>
+                    <li>Hides the element and its content from assistive technologies by excluding them from the accessibility tree.</li>
+                </ul>
+                <p>The inert attribute can be added to sections of content that should not be interactive. When an element is inert, it along with all of the element's descendants, including normally interactive elements such as links, buttons, and form controls, are disabled because they cannot receive focus or be clicked.</p>
+            </article>
+        </section>
+
     </main>
 </body>
 </html>

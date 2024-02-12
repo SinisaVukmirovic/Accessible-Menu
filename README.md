@@ -26,7 +26,7 @@ ___
     setupTopNav(media);
 }
 ```
-### inert attribute is used to hide element from the accessibility tools.
+### "inert" attribute is used to hide element from the accessibility tools.
 ##### *The inert global attribute is a Boolean attribute indicating that the browser will ignore the element.* 
 ##### *Prevents the click event from being fired when the user clicks on the element.*
 ##### *Prevents the focus event from being raised by preventing the element from gaining focus.*

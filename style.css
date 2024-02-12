@@ -21,12 +21,26 @@ button {
     cursor: pointer;
 }
 
+ul {
+    padding: 1rem;
+}
+
 .topnav {
     background-color: #333;
     padding: 1.5rem 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    & .logo {
+        font-size: 1.5rem;
+        word-spacing: -6px;
+
+        & .accent {
+            font-weight: bold;
+            color: rgb(31, 255, 191);
+        }
+    }
 
     & .topnav__open {
         @media (width >=40em) {
@@ -90,8 +104,23 @@ button {
     }
 }
 
-/* @media (width < 40em) {
-    .topnav__open[aria-expanded="true"] + .topnav__menu {
-        translate: 0;
+main {
+    padding: 5rem 10%;
+
+    & article {
+        margin: 2rem 0;
     }
-} */
+
+    & code pre {
+        padding: 1rem;
+        font-size: .8rem;
+    }
+
+    & p {
+        margin: .5rem 0;
+    }
+
+    @media (width < 40em) {
+        padding-inline: 1rem;
+    }
+}

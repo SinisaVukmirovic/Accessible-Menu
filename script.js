@@ -6,6 +6,8 @@ const media = window.matchMedia('(width < 40em)');
 const topNavMenu = document.querySelector('.topnav__menu');
 const mainElem = document.querySelector('main');
 
+const links = document.querySelectorAll('.topnav--link');
+
 function setupTopNav(e) {
     if (e.matches) {
         console.log('is mobile');
@@ -53,6 +55,8 @@ setupTopNav(media);
 
 btnOpen.addEventListener('click', openMobileMenu);
 btnClose.addEventListener('click', closeMobileMenu);
+
+links.forEach(link => link.addEventListener('click', closeMobileMenu));
 
 // handling the inert attribut in cases where the user changes the viewports
 media.addEventListener('change', e => setupTopNav(e));

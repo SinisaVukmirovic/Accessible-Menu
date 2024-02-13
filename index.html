@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="topnav">
-        <a href="#" class="logo">Accessible <span class="accent">Menu</span></a>
+        <a href="#" class="logo"><span class="accent">Accessible</span> Menu</a>
 
         <nav>
             <!-- in order to give screenreaders context for these 2 parts of the dialog we need to give them a label -->
@@ -28,13 +28,13 @@
 
                 <ul class="topnav__links">
                     <li class="topnav__item">
-                        <a href="#" class="topnav__link">About</a>
+                        <a href="#dialog" class="topnav--link">Dialog</a>
                     </li>
                     <li class="topnav__item">
-                        <a href="#" class="topnav__link">Portfolio</a>
+                        <a href="#media" class="topnav--link">Media</a>
                     </li>
                     <li class="topnav__item">
-                        <a href="#" class="topnav__link">Contact</a>
+                        <a href="#inert" class="topnav--link">Inert</a>
                     </li>
                 </ul>
             </div>
@@ -48,12 +48,17 @@
                 <p>Interactive elements should be created as HTML button element, so that keyboards and screenreaders can press it.</p>
                 <p>Alt attribute for icon images in those elements should be left blank, so that screenreaders will ignore it.</p>
             </article>
-            <article>
+            <article id="dialog">
+                <h2>role="dialog"</h2>
                 <p>role="dialog" indicated that it contains additional content on the website that you can access by interacting with a control. (hamburger menus, accordions, pop-up modals)</p>
                 <p>Other part of the "dialog" is the element that controls whather the dialog's content is expanded or hidden, aria-expanded="false/true".</p>
                 <p>In order to give screenreaders context for these 2 parts of the dialog we need to give them a label, with aria-labeledby attribute and value of the ID of labeling element, to the, both, menu and open btn.</p>
+                <div>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role" target="_blank" class="accent">View full documentation &#8594;</a>
+                </div>
             </article>
-            <article>
+            <article id="media">
+                <h2>matchMedia() method</h2>
                 <p>to check the width of the device on which the website was first loaded on, we can use "window.matchMedia" method.</p>
                 <code><pre>
 const media = window.matchMedia('(width &lt; 40em)');
@@ -68,16 +73,23 @@ function setupTopNav(e) {
     setupTopNav(media);
 }
                 </pre></code>
+                <div>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia" target="_blank" class="accent">View full documentation &#8594;</a>
+                </div>
             </article>
-            <article>
+            <article id="inert">
+                <h2>"inert" attribute</h2>
                 <p>"inert" attribute is used to hide element from the accessibility tools.</p>
                 <p>The inert global attribute is a Boolean attribute indicating that the browser will ignore the element.</p>
-                <ul>
+                <ul class="list">
                     <li>Prevents the click event from being fired when the user clicks on the element.</li>
                     <li>Prevents the focus event from being raised by preventing the element from gaining focus.</li>
                     <li>Hides the element and its content from assistive technologies by excluding them from the accessibility tree.</li>
                 </ul>
                 <p>The inert attribute can be added to sections of content that should not be interactive. When an element is inert, it along with all of the element's descendants, including normally interactive elements such as links, buttons, and form controls, are disabled because they cannot receive focus or be clicked.</p>
+                <div>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inert" target="_blank" class="accent">View full documentation &#8594;</a>
+                </div>
             </article>
         </section>
 

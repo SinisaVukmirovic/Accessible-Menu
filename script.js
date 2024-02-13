@@ -56,7 +56,10 @@ setupTopNav(media);
 btnOpen.addEventListener('click', openMobileMenu);
 btnClose.addEventListener('click', closeMobileMenu);
 
-links.forEach(link => link.addEventListener('click', closeMobileMenu));
+links.forEach(link => link.addEventListener('click', () => {
+    closeMobileMenu();
+    topNavMenu.removeAttribute('inert');
+}));
 
 // handling the inert attribut in cases where the user changes the viewports
 media.addEventListener('change', e => setupTopNav(e));

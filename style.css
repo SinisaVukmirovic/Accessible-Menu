@@ -5,7 +5,7 @@
 }
 
 :root {
-    --bg-clr: rgb(12 20 39);;
+    --bg-clr: rgb(12 20 39);
     --secondary-clr: rgb(17 29 53);
     --accent-clr: rgb(250 223 134);;
     --text-clr: #eee;
@@ -48,6 +48,7 @@ h2 {
 
 .topnav {
     background-color: var(--secondary-clr);
+    box-shadow: 0 1px 0 1px #111;
     padding: 1.5rem 20%;
     display: flex;
     justify-content: space-between;
@@ -86,10 +87,6 @@ h2 {
             /* padding: 2rem 10%; */
             translate: 100vw 0;
             transition: translate 500ms ease-in-out;
-
-            & .topnav--link {
-                font-size: 1.5rem;
-            }
         }
 
         /* removing translate with opacity for users that prefer reduced motion */
@@ -118,6 +115,14 @@ h2 {
             flex-direction: column;
             font-size: 2.5rem;
             margin-top: 3rem;
+
+            & li {
+                width: 100%;
+                text-align: center;
+                padding-block: 0 1rem;
+                border-bottom: 2px solid var(--bg-clr);
+                /* background-color: var(--bg-clr); */
+            }
         }
     }
 
@@ -126,7 +131,8 @@ h2 {
 
         & .topnav--link {
             text-decoration: none;
-            color: #eee;
+            color: var(--text-clr);
+            font-size: 1.25rem;
 
             &:hover {
                 color: var(--accent-clr);
@@ -139,9 +145,10 @@ main {
     padding: 10rem 20% 5rem;
 
     & article {
-        margin: 3rem 0;
+        margin: 5rem 0;
         padding: 1rem;
         background-color: var(--secondary-clr);
+        border-left: 1px solid var(--accent-clr);
 
         & div {
             text-align: right; 
@@ -164,7 +171,6 @@ main {
     }
 
     @media (width < 40em) {
-        padding-inline: 1rem;
-        padding-block: 5rem 3rem;
+        padding: 5rem 1rem 3rem;
     }
 }

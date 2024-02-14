@@ -58,7 +58,7 @@ btnClose.addEventListener('click', closeMobileMenu);
 
 links.forEach(link => link.addEventListener('click', () => {
     closeMobileMenu();
-    topNavMenu.removeAttribute('inert');
+    setupTopNav(media);
 }));
 
 // handling the inert attribut in cases where the user changes the viewports
